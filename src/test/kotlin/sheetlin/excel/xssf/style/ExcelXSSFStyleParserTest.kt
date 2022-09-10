@@ -4,8 +4,12 @@ import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import sheetlin.HorizontalAlignment
 import sheetlin.Style
+import sheetlin.VerticalAlignment
 import java.awt.Color
+import org.apache.poi.ss.usermodel.HorizontalAlignment as XSSFHorizontalAlignment
+import org.apache.poi.ss.usermodel.VerticalAlignment as XSSFVerticalAlignment
 
 internal class ExcelXSSFStyleParserTest {
 
@@ -14,8 +18,10 @@ internal class ExcelXSSFStyleParserTest {
         val xssfWorkbook = XSSFWorkbook()
         val style = Style(
             locked = true,
-            wrapText = true,
             hidden = true,
+            wrapText = true,
+            horizontalAlignment = HorizontalAlignment.RIGHT,
+            verticalAlignment = VerticalAlignment.BOTTOM,
             backgroundColor = Color.RED
         )
 
@@ -27,6 +33,8 @@ internal class ExcelXSSFStyleParserTest {
         assertEquals(true, actual.locked)
         assertEquals(true, actual.hidden)
         assertEquals(true, actual.wrapText)
+        assertEquals(XSSFHorizontalAlignment.RIGHT, actual.alignment)
+        assertEquals(XSSFVerticalAlignment.BOTTOM, actual.verticalAlignment)
         assertEquals(XSSFColor(Color.RED, null), actual.fillForegroundXSSFColor)
     }
 }

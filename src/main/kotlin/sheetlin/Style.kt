@@ -7,11 +7,23 @@ data class Style(
     val font: Font? = null,
     val locked: Boolean = false,
     val hidden: Boolean = false,
-//    val horizontalAlign
-    // val verticalAlign
+    val horizontalAlignment: HorizontalAlignment? = null,
+    val verticalAlignment: VerticalAlignment? = null,
     val wrapText: Boolean = false,
     val backgroundColor: Color? = null,
 )
+
+enum class HorizontalAlignment {
+    LEFT,
+    CENTER,
+    RIGHT,
+}
+
+enum class VerticalAlignment {
+    TOP,
+    CENTER,
+    BOTTOM,
+}
 
 data class Font(
     val fontName: String? = null,

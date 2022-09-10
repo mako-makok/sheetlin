@@ -21,6 +21,14 @@ object ExcelXSSFStyleParser {
         xssfCellStyle.hidden = style.hidden
         xssfCellStyle.wrapText = style.wrapText
 
+        style.horizontalAlignment?.also { horizontalAlignment ->
+            xssfCellStyle.alignment = ExcelXSSFHorizontalAlignmentParser.parse(horizontalAlignment)
+        }
+
+        style.verticalAlignment?.also { verticalAlignment ->
+            xssfCellStyle.verticalAlignment = ExcelXSSFVerticalAlignmentParser.parse(verticalAlignment)
+        }
+
         style.backgroundColor?.also { color ->
             val xssfColor = XSSFColor(color, null)
             xssfCellStyle.setFillForegroundColor(xssfColor)

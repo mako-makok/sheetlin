@@ -3,7 +3,7 @@ package sheetlin.excel.xssf.style
 import org.apache.poi.ss.usermodel.FontUnderline
 import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import sheetlin.Font
 import java.awt.Color
