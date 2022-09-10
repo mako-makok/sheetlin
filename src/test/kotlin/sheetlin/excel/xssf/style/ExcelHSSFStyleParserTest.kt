@@ -1,6 +1,6 @@
 package sheetlin.excel.xssf.style
 
-import org.apache.poi.ss.usermodel.IndexedColors
+import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -27,6 +27,6 @@ internal class ExcelXSSFStyleParserTest {
         assertEquals(true, actual.locked)
         assertEquals(true, actual.hidden)
         assertEquals(true, actual.wrapText)
-        assertEquals(IndexedColors.RED.index, actual.fillBackgroundColor)
+        assertEquals(XSSFColor(Color.RED, null), actual.fillForegroundXSSFColor)
     }
 }
