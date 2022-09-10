@@ -1,9 +1,8 @@
-import sheetlin.*
+
 import sheetlin.excel.xssf.ExcelXSSFWorkbookBuilder
 import java.awt.Color
 import java.io.FileOutputStream
 import java.io.IOException
-
 
 fun main(args: Array<String>) {
     val workbook = Workbook(

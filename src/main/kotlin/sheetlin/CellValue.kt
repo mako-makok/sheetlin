@@ -11,12 +11,12 @@ data class StringCellValue(
 
 data class NumericCellValue(
     val value: BigDecimal
-): CellValue
+) : CellValue
 
 data class DateTimeCellValue(
     val value: LocalDateTime
-): CellValue
+) : CellValue
 
 data class FormulaCellValue(
     val value: String
-): CellValue
+) : CellValue
