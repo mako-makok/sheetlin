@@ -1,5 +1,6 @@
 package sheetlin.excel.xssf.style
 
+import org.apache.poi.ss.usermodel.FontUnderline
 import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.junit.jupiter.api.Assertions.*
@@ -18,6 +19,7 @@ internal class ExcelXSSFFontParserTest {
             italic = true,
             bold = true,
             strikeThrough = true,
+            underline = true,
             fontColor = Color.BLUE
         )
 
@@ -31,6 +33,7 @@ internal class ExcelXSSFFontParserTest {
         assertEquals(true, actual.italic)
         assertEquals(true, actual.bold)
         assertEquals(true, actual.strikeout)
+        assertEquals(FontUnderline.SINGLE.byteValue, actual.underline)
         assertEquals(XSSFColor(Color.BLUE, null), actual.xssfColor)
     }
 }

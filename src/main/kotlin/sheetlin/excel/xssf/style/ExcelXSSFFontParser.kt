@@ -1,5 +1,6 @@
 package sheetlin.excel.xssf.style
 
+import org.apache.poi.ss.usermodel.FontUnderline
 import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFFont
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
@@ -21,6 +22,9 @@ object ExcelXSSFFontParser {
         xssfFontStyle.italic = font.italic
         xssfFontStyle.bold = font.bold
         xssfFontStyle.strikeout = font.strikeThrough
+        if (font.underline) {
+            xssfFontStyle.underline = FontUnderline.SINGLE.byteValue
+        }
 
         font.fontColor?.also { color ->
             val xssfColor = XSSFColor(color, null)

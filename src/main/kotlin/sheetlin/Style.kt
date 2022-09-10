@@ -19,7 +19,6 @@ data class Font(
     val italic: Boolean = false,
     val bold: Boolean = false,
     val strikeThrough: Boolean = false,
-    //    val underLine
-    //    val charset:
+    val underline: Boolean = false,
     val fontColor: Color? = null,
 )
