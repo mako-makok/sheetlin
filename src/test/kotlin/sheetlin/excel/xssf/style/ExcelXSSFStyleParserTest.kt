@@ -1,11 +1,13 @@
 package sheetlin.excel.xssf.style
 
+import org.apache.poi.ss.usermodel.FillPatternType
 import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import sheetlin.core.style.Border
 import sheetlin.core.style.BorderStyle
+import sheetlin.core.style.Font
 import sheetlin.core.style.HorizontalAlignment
 import sheetlin.core.style.Style
 import sheetlin.core.style.VerticalAlignment
@@ -20,6 +22,9 @@ internal class ExcelXSSFStyleParserTest {
     fun parse() {
         val xssfWorkbook = XSSFWorkbook()
         val style = Style(
+            font = Font(
+                fontColor = Color.CYAN
+            ),
             locked = true,
             hidden = true,
             wrapText = true,
@@ -49,6 +54,7 @@ internal class ExcelXSSFStyleParserTest {
             style
         )
 
+        assertEquals(XSSFColor(Color.CYAN, null), actual.font?.xssfColor)
         assertEquals(true, actual.locked)
         assertEquals(true, actual.hidden)
         assertEquals(true, actual.wrapText)
@@ -57,7 +63,7 @@ internal class ExcelXSSFStyleParserTest {
 
         // background color
         assertEquals(XSSFColor(Color.RED, null), actual.fillForegroundXSSFColor)
-        assertEquals(XSSFColor(Color.RED, null), actual.fillForegroundColor)
+        assertEquals(FillPatternType.SOLID_FOREGROUND, actual.fillPattern)
 
         // top border
         assertEquals(XSSFBorderStyle.THIN, actual.borderTop)
