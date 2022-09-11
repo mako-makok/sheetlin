@@ -30,6 +30,7 @@ fun main(args: Array<String>) {
                                     font = Font(
                                         fontName = "HGGothicE",
                                         fontColor = Color.BLUE,
+                                        fontHeight = 22,
                                         italic = true,
                                         bold = true,
                                         strikeThrough = true,

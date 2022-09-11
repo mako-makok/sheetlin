@@ -29,7 +29,7 @@ internal class ExcelXSSFFontParserTest {
         )
 
         assertEquals("HGGothicE", actual.fontName)
-        assertEquals(10, actual.fontHeight)
+        assertEquals(10, actual.fontHeightInPoints)
         assertEquals(true, actual.italic)
         assertEquals(true, actual.bold)
         assertEquals(true, actual.strikeout)
