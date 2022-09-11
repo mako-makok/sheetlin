@@ -21,6 +21,42 @@ object ExcelXSSFStyleParser {
         xssfCellStyle.hidden = style.hidden
         xssfCellStyle.wrapText = style.wrapText
 
+        style.borderTop?.also { borderTop ->
+            val xssfBorderStyle = ExcelXSSFBorderStyleParser.parse(borderTop.borderStyle)
+            xssfCellStyle.borderTop = xssfBorderStyle
+            borderTop.color?.also { borderTopColor ->
+                val xssfColor = XSSFColor(borderTopColor, null)
+                xssfCellStyle.setTopBorderColor(xssfColor)
+            }
+        }
+
+        style.borderLeft?.also { borderLeft ->
+            val xssfBorderStyle = ExcelXSSFBorderStyleParser.parse(borderLeft.borderStyle)
+            xssfCellStyle.borderLeft = xssfBorderStyle
+            borderLeft.color?.also { borderLeftColor ->
+                val xssfColor = XSSFColor(borderLeftColor, null)
+                xssfCellStyle.setLeftBorderColor(xssfColor)
+            }
+        }
+
+        style.borderBottom?.also { borderBottom ->
+            val xssfBorderStyle = ExcelXSSFBorderStyleParser.parse(borderBottom.borderStyle)
+            xssfCellStyle.borderBottom = xssfBorderStyle
+            borderBottom.color?.also { borderBottomColor ->
+                val xssfColor = XSSFColor(borderBottomColor, null)
+                xssfCellStyle.setBottomBorderColor(xssfColor)
+            }
+        }
+
+        style.borderRight?.also { borderRight ->
+            val xssfBorderStyle = ExcelXSSFBorderStyleParser.parse(borderRight.borderStyle)
+            xssfCellStyle.borderRight = xssfBorderStyle
+            borderRight.color?.also { borderRightColor ->
+                val xssfColor = XSSFColor(borderRightColor, null)
+                xssfCellStyle.setRightBorderColor(xssfColor)
+            }
+        }
+
         style.horizontalAlignment?.also { horizontalAlignment ->
             xssfCellStyle.alignment = ExcelXSSFHorizontalAlignmentParser.parse(horizontalAlignment)
         }

@@ -11,4 +11,8 @@ data class Style(
     val verticalAlignment: VerticalAlignment? = null,
     val wrapText: Boolean = false,
     val backgroundColor: Color? = null,
+    val borderTop: Border? = null,
+    val borderLeft: Border? = null,
+    val borderBottom: Border? = null,
+    val borderRight: Border? = null,
 )

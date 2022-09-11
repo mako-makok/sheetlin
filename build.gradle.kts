@@ -14,11 +14,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
-
     implementation("org.apache.poi:poi:5.2.2")
     implementation("org.apache.poi:poi-ooxml:5.2.2")
     implementation("org.apache.logging.log4j:log4j-core:2.18.0")
+
+    testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.0")
 }
 
 tasks.test {

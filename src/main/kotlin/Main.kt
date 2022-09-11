@@ -4,6 +4,8 @@ import sheetlin.core.Row
 import sheetlin.core.Sheet
 import sheetlin.core.StringCellValue
 import sheetlin.core.Workbook
+import sheetlin.core.style.Border
+import sheetlin.core.style.BorderStyle
 import sheetlin.core.style.Font
 import sheetlin.core.style.Style
 import sheetlin.excel.xssf.ExcelXSSFWorkbookParser
@@ -27,11 +29,15 @@ fun main(args: Array<String>) {
                                         fontColor = Color.BLUE,
                                         italic = true,
                                         bold = true,
-                                        strikeThrough = true
+                                        strikeThrough = true,
                                     ),
                                     locked = true,
                                     wrapText = true,
-                                    hidden = true
+                                    hidden = true,
+                                    borderBottom = Border(
+                                        borderStyle = BorderStyle.THIN,
+                                        color = Color.GREEN
+                                    )
                                 )
                             ),
                             Cell(
