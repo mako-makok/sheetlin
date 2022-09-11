@@ -11,7 +11,7 @@ import sheetlin.core.style.Border
 import sheetlin.core.style.BorderStyle
 import sheetlin.core.style.Font
 import sheetlin.core.style.Style
-import sheetlin.excel.xssf.ExcelXSSFWorkbookParser
+import sheetlin.excel.xssf.ExcelXSSFFileOutputStreamWriter
 import java.awt.Color
 import java.io.FileOutputStream
 import java.io.IOException
@@ -69,12 +69,12 @@ fun main(args: Array<String>) {
         )
     )
 
-    val excelWorkbook = ExcelXSSFWorkbookParser.parse(workbook)
-
     var out: FileOutputStream? = null
     try {
-        out = FileOutputStream("sample2_2.xlsx")
-        excelWorkbook.write(out)
+        out = FileOutputStream("workbook1.xlsx")
+        ExcelXSSFFileOutputStreamWriter.write(out, workbook) { xssfWorkbook ->
+            xssfWorkbook.setSheetName(0, "sideeffectedsheet")
+        }
     } catch (e: IOException) {
         println(e.toString())
         throw e
