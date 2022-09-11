@@ -25,6 +25,7 @@ internal class ExcelXSSFStyleParserTest {
             font = Font(
                 fontColor = Color.CYAN
             ),
+            format = "0.0%",
             locked = true,
             hidden = true,
             wrapText = true,
@@ -55,6 +56,7 @@ internal class ExcelXSSFStyleParserTest {
         )
 
         assertEquals(XSSFColor(Color.CYAN, null), actual.font?.xssfColor)
+        assertEquals("0.0%", actual.dataFormatString)
         assertEquals(true, actual.locked)
         assertEquals(true, actual.hidden)
         assertEquals(true, actual.wrapText)

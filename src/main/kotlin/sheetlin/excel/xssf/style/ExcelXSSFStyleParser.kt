@@ -16,6 +16,11 @@ object ExcelXSSFStyleParser {
             xssfCellStyle.setFont(xssfFontStyle)
         }
 
+        style.format?.also { format ->
+            val xssfFormat = xssfWorkbook.createDataFormat()
+            xssfCellStyle.dataFormat = xssfFormat.getFormat(format)
+        }
+
         xssfCellStyle.locked = true
         xssfCellStyle.locked = style.locked
         xssfCellStyle.hidden = style.hidden
