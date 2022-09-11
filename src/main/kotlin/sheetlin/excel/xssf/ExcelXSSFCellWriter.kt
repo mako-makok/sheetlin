@@ -2,6 +2,8 @@ package sheetlin.excel.xssf
 
 import org.apache.poi.xssf.usermodel.XSSFRow
 import sheetlin.core.AbstractCell
+import sheetlin.core.BooleanCellValue
+import sheetlin.core.DateCellValue
 import sheetlin.core.DateTimeCellValue
 import sheetlin.core.FormulaCellValue
 import sheetlin.core.NumericCellValue
@@ -18,9 +20,11 @@ object ExcelXSSFCellWriter {
 
         when (cell.value) {
             is StringCellValue -> xssfCell.setCellValue((cell.value as StringCellValue).value)
-            is FormulaCellValue -> xssfCell.cellFormula = (cell.value as FormulaCellValue).value
+            is BooleanCellValue -> xssfCell.setCellValue((cell.value as BooleanCellValue).value)
             is NumericCellValue -> xssfCell.setCellValue((cell.value as NumericCellValue).value)
             is DateTimeCellValue -> xssfCell.setCellValue((cell.value as DateTimeCellValue).value)
+            is DateCellValue -> xssfCell.setCellValue((cell.value as DateCellValue).value)
+            is FormulaCellValue -> xssfCell.cellFormula = (cell.value as FormulaCellValue).value
         }
     }
 }
