@@ -1,5 +1,8 @@
+import sheetlin.core.AbstractCell
 import sheetlin.core.Cell
+import sheetlin.core.CellValue
 import sheetlin.core.FormulaCellValue
+import sheetlin.core.NumericCellValue
 import sheetlin.core.Row
 import sheetlin.core.Sheet
 import sheetlin.core.StringCellValue
@@ -12,6 +15,7 @@ import sheetlin.excel.xssf.ExcelXSSFWorkbookParser
 import java.awt.Color
 import java.io.FileOutputStream
 import java.io.IOException
+import java.math.BigDecimal
 
 fun main(args: Array<String>) {
     val workbook = Workbook(
@@ -49,17 +53,23 @@ fun main(args: Array<String>) {
                                     ),
                                     backgroundColor = Color.GRAY
                                 )
-                            )
-//                            Cell("1C"),
-//                        )
-//                    ),
-//                    Row(
-//                        listOf(
-//                            Cell("2A"),
-//                            Cell("2B"),
-//                            Cell("2C"),
-//                        )
-//                    )
+                            ),
+                            CustomCell(
+                                NumericCellValue(BigDecimal.valueOf(1))
+                            ),
+                        )
+                    ),
+                    Row(
+                        listOf(
+                            CustomCell(
+                                StringCellValue("2A")
+                            ),
+                            CustomCell(
+                                StringCellValue("2B")
+                            ),
+                            CustomCell(
+                                StringCellValue("2C")
+                            ),
                         )
                     )
                 )
@@ -84,4 +94,12 @@ fun main(args: Array<String>) {
             throw e
         }
     }
+}
+
+data class CustomCell(
+    override val value: CellValue,
+) : AbstractCell {
+    override val style: Style = Style(
+        backgroundColor = Color.GREEN
+    )
 }

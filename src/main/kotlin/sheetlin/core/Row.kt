@@ -1,5 +1,5 @@
 package sheetlin.core
 
 data class Row(
-    val cells: List<Cell>
+    val cells: List<AbstractCell>
 )
