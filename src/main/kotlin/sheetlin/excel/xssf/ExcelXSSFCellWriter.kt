@@ -19,7 +19,7 @@ object ExcelXSSFCellWriter {
         when (cell.value) {
             is StringCellValue -> xssfCell.setCellValue((cell.value as StringCellValue).value)
             is FormulaCellValue -> xssfCell.cellFormula = (cell.value as FormulaCellValue).value
-            is NumericCellValue -> xssfCell.setCellValue((cell.value as NumericCellValue).value.toDouble())
+            is NumericCellValue -> xssfCell.setCellValue((cell.value as NumericCellValue).value)
             is DateTimeCellValue -> xssfCell.setCellValue((cell.value as DateTimeCellValue).value)
         }
     }

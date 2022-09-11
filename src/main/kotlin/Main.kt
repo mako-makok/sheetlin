@@ -91,7 +91,7 @@ fun main(args: Array<String>) {
 data class LightGrayIntCell(
     private val intValue: Int,
 ) : AbstractCell {
-    override val value: CellValue = NumericCellValue(intValue.toBigDecimal())
+    override val value: CellValue = NumericCellValue(intValue.toDouble())
     override val style: Style = Style(
         backgroundColor = Color.LIGHT_GRAY
     )
