@@ -15,7 +15,6 @@ import sheetlin.excel.xssf.ExcelXSSFWorkbookParser
 import java.awt.Color
 import java.io.FileOutputStream
 import java.io.IOException
-import java.math.BigDecimal
 
 fun main(args: Array<String>) {
     val workbook = Workbook(
@@ -54,22 +53,14 @@ fun main(args: Array<String>) {
                                     backgroundColor = Color.GRAY
                                 )
                             ),
-                            CustomCell(
-                                NumericCellValue(BigDecimal.valueOf(1))
-                            ),
+                            LightGrayIntCell(4),
                         )
                     ),
                     Row(
                         listOf(
-                            CustomCell(
-                                StringCellValue("2A")
-                            ),
-                            CustomCell(
-                                StringCellValue("2B")
-                            ),
-                            CustomCell(
-                                StringCellValue("2C")
-                            ),
+                            LightGrayIntCell(1),
+                            LightGrayIntCell(2),
+                            LightGrayIntCell(3),
                         )
                     )
                 )
@@ -96,10 +87,11 @@ fun main(args: Array<String>) {
     }
 }
 
-data class CustomCell(
-    override val value: CellValue,
+data class LightGrayIntCell(
+    private val intValue: Int,
 ) : AbstractCell {
+    override val value: CellValue = NumericCellValue(intValue.toBigDecimal())
     override val style: Style = Style(
-        backgroundColor = Color.GREEN
+        backgroundColor = Color.LIGHT_GRAY
     )
 }
