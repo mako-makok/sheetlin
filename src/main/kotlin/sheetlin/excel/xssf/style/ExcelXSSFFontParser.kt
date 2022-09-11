@@ -16,7 +16,7 @@ object ExcelXSSFFontParser {
         }
 
         font.fontHeight?.also {
-            xssfFontStyle.fontHeight = it
+            xssfFontStyle.fontHeightInPoints = it
         }
 
         xssfFontStyle.italic = font.italic

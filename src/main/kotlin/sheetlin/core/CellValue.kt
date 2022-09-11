@@ -1,6 +1,6 @@
 package sheetlin.core
 
-import java.math.BigDecimal
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 sealed interface CellValue
@@ -10,11 +10,19 @@ data class StringCellValue(
 ) : CellValue
 
 data class NumericCellValue(
-    val value: BigDecimal
+    val value: Double
+) : CellValue
+
+data class BooleanCellValue(
+    val value: Boolean
 ) : CellValue
 
 data class DateTimeCellValue(
     val value: LocalDateTime
+) : CellValue
+
+data class DateCellValue(
+    val value: LocalDate
 ) : CellValue
 
 data class FormulaCellValue(
