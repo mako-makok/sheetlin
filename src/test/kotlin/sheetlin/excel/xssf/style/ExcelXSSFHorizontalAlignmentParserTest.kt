@@ -2,7 +2,7 @@ package sheetlin.excel.xssf.style
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import sheetlin.HorizontalAlignment
+import sheetlin.core.style.HorizontalAlignment
 import org.apache.poi.ss.usermodel.HorizontalAlignment as XSSFHorizontalAlignment
 
 internal class ExcelXSSFHorizontalAlignmentParserTest {

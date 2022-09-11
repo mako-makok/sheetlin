@@ -1,11 +1,11 @@
 package sheetlin.excel.xssf
 
 import org.apache.poi.xssf.usermodel.XSSFRow
-import sheetlin.Cell
-import sheetlin.DateTimeCellValue
-import sheetlin.FormulaCellValue
-import sheetlin.NumericCellValue
-import sheetlin.StringCellValue
+import sheetlin.core.Cell
+import sheetlin.core.DateTimeCellValue
+import sheetlin.core.FormulaCellValue
+import sheetlin.core.NumericCellValue
+import sheetlin.core.StringCellValue
 import sheetlin.excel.xssf.style.ExcelXSSFStyleParser
 
 object ExcelXSSFCellWriter {

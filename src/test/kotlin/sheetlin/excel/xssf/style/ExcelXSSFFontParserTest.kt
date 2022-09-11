@@ -5,7 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import sheetlin.Font
+import sheetlin.core.style.Font
 import java.awt.Color
 
 internal class ExcelXSSFFontParserTest {

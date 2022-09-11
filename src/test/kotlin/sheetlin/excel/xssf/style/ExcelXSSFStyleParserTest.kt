@@ -4,9 +4,9 @@ import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import sheetlin.HorizontalAlignment
-import sheetlin.Style
-import sheetlin.VerticalAlignment
+import sheetlin.core.style.HorizontalAlignment
+import sheetlin.core.style.Style
+import sheetlin.core.style.VerticalAlignment
 import java.awt.Color
 import org.apache.poi.ss.usermodel.HorizontalAlignment as XSSFHorizontalAlignment
 import org.apache.poi.ss.usermodel.VerticalAlignment as XSSFVerticalAlignment

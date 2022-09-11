@@ -1,11 +1,11 @@
-import sheetlin.Cell
-import sheetlin.Font
-import sheetlin.FormulaCellValue
-import sheetlin.Row
-import sheetlin.Sheet
-import sheetlin.StringCellValue
-import sheetlin.Style
-import sheetlin.Workbook
+import sheetlin.core.Cell
+import sheetlin.core.FormulaCellValue
+import sheetlin.core.Row
+import sheetlin.core.Sheet
+import sheetlin.core.StringCellValue
+import sheetlin.core.Workbook
+import sheetlin.core.style.Font
+import sheetlin.core.style.Style
 import sheetlin.excel.xssf.ExcelXSSFWorkbookBuilder
 import java.awt.Color
 import java.io.FileOutputStream
@@ -27,11 +27,11 @@ fun main(args: Array<String>) {
                                         fontColor = Color.BLUE,
                                         italic = true,
                                         bold = true,
-                                        strikeThrough = true,
+                                        strikeThrough = true
                                     ),
                                     locked = true,
                                     wrapText = true,
-                                    hidden = true,
+                                    hidden = true
                                 )
                             ),
                             Cell(
@@ -41,9 +41,9 @@ fun main(args: Array<String>) {
                                     font = Font(
                                         fontColor = Color.RED
                                     ),
-                                    backgroundColor = Color.GRAY,
+                                    backgroundColor = Color.GRAY
                                 )
-                            ),
+                            )
 //                            Cell("1C"),
 //                        )
 //                    ),

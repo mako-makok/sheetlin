@@ -4,7 +4,7 @@ import org.apache.poi.ss.usermodel.FillPatternType
 import org.apache.poi.xssf.usermodel.XSSFCellStyle
 import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import sheetlin.Style
+import sheetlin.core.style.Style
 
 object ExcelXSSFStyleParser {
 

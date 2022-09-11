@@ -1,24 +1,25 @@
 package sheetlin.excel.xssf.style
 
-import org.apache.poi.ss.usermodel.VerticalAlignment
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import sheetlin.core.style.VerticalAlignment
+import org.apache.poi.ss.usermodel.VerticalAlignment as XSSFVerticalAlignment
 
 internal class ExcelXSSFVerticalAlignmentParserTest {
 
     @Test
     fun parse() {
         assertEquals(
-            VerticalAlignment.TOP,
-            ExcelXSSFVerticalAlignmentParser.parse(sheetlin.VerticalAlignment.TOP)
+            XSSFVerticalAlignment.TOP,
+            ExcelXSSFVerticalAlignmentParser.parse(VerticalAlignment.TOP)
         )
         assertEquals(
-            VerticalAlignment.CENTER,
-            ExcelXSSFVerticalAlignmentParser.parse(sheetlin.VerticalAlignment.CENTER)
+            XSSFVerticalAlignment.CENTER,
+            ExcelXSSFVerticalAlignmentParser.parse(VerticalAlignment.CENTER)
         )
         assertEquals(
-            VerticalAlignment.BOTTOM,
-            ExcelXSSFVerticalAlignmentParser.parse(sheetlin.VerticalAlignment.BOTTOM)
+            XSSFVerticalAlignment.BOTTOM,
+            ExcelXSSFVerticalAlignmentParser.parse(VerticalAlignment.BOTTOM)
         )
     }
 }

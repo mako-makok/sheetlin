@@ -1,7 +1,7 @@
 package sheetlin.excel.xssf
 
 import org.apache.poi.xssf.usermodel.XSSFSheet
-import sheetlin.Row
+import sheetlin.core.Row
 
 object ExcelXSSFRowWriter {
 

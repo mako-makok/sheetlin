@@ -1,4 +1,4 @@
-package sheetlin
+package sheetlin.core
 
 import java.math.BigDecimal
 import java.time.LocalDateTime

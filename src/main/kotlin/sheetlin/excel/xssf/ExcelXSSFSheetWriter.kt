@@ -1,7 +1,7 @@
 package sheetlin.excel.xssf
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import sheetlin.Sheet
+import sheetlin.core.Sheet
 
 object ExcelXSSFSheetWriter {
 
@@ -12,7 +12,9 @@ object ExcelXSSFSheetWriter {
             val row = it.value
             val rowIndex = it.index
             ExcelXSSFRowWriter.write(
-                xssfSheet, row, rowIndex
+                xssfSheet,
+                row,
+                rowIndex
             )
         }
     }

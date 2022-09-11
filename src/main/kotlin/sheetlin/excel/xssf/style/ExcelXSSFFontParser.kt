@@ -4,7 +4,7 @@ import org.apache.poi.ss.usermodel.FontUnderline
 import org.apache.poi.xssf.usermodel.XSSFColor
 import org.apache.poi.xssf.usermodel.XSSFFont
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import sheetlin.Font
+import sheetlin.core.style.Font
 
 object ExcelXSSFFontParser {
 

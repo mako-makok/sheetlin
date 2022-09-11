@@ -1,7 +1,7 @@
 package sheetlin.excel.xssf
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import sheetlin.Workbook
+import sheetlin.core.Workbook
 
 object ExcelXSSFWorkbookBuilder {
 

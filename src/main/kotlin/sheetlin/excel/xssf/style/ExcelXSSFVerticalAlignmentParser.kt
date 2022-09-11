@@ -1,6 +1,6 @@
 package sheetlin.excel.xssf.style
 
-import sheetlin.VerticalAlignment
+import sheetlin.core.style.VerticalAlignment
 import org.apache.poi.ss.usermodel.VerticalAlignment as XSSFVerticalAlignment
 
 object ExcelXSSFVerticalAlignmentParser {
