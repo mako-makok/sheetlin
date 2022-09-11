@@ -6,7 +6,7 @@ import sheetlin.core.StringCellValue
 import sheetlin.core.Workbook
 import sheetlin.core.style.Font
 import sheetlin.core.style.Style
-import sheetlin.excel.xssf.ExcelXSSFWorkbookBuilder
+import sheetlin.excel.xssf.ExcelXSSFWorkbookParser
 import java.awt.Color
 import java.io.FileOutputStream
 import java.io.IOException
@@ -61,7 +61,7 @@ fun main(args: Array<String>) {
         )
     )
 
-    val excelWorkbook = ExcelXSSFWorkbookBuilder.build(workbook)
+    val excelWorkbook = ExcelXSSFWorkbookParser.parse(workbook)
 
     var out: FileOutputStream? = null
     try {

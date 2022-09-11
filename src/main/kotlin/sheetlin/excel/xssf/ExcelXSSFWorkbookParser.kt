@@ -3,9 +3,9 @@ package sheetlin.excel.xssf
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import sheetlin.core.Workbook
 
-object ExcelXSSFWorkbookBuilder {
+object ExcelXSSFWorkbookParser {
 
-    fun build(workbook: Workbook): XSSFWorkbook {
+    fun parse(workbook: Workbook): XSSFWorkbook {
         val xssfWorkbook = XSSFWorkbook()
 
         workbook.sheets.forEach { sheet ->
